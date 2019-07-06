@@ -52,17 +52,17 @@ class Makeup extends Thread {
 			synchronized (lipstick) {// 获得口红的锁
 				System.out.println(this.girlName + ":获得口红的锁");
 				Thread.sleep(1000);
-				synchronized (mirror) {// 1秒钟后，获得镜子
-					System.out.println(this.girlName + ":获得了镜子的锁");
-				}
+			}
+			synchronized (mirror) {// 1秒钟后，获得镜子
+				System.out.println(this.girlName + ":获得了镜子的锁");
 			}
 		} else {
 			synchronized (mirror) {// 获得镜子的锁
 				System.out.println(this.girlName + ":获得镜子的锁");
 				Thread.sleep(2000);
-				synchronized (lipstick) {// 2秒钟后，获得口红的锁
-					System.out.println(this.girlName + ":获得了口红的锁");
-				}
+			}
+			synchronized (lipstick) {// 2秒钟后，获得口红的锁
+				System.out.println(this.girlName + ":获得了口红的锁");
 			}
 		}
 	}
